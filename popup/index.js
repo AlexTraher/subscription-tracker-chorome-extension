@@ -5,6 +5,9 @@ const handle = async () => {
   const container = document.querySelector('.sub-container');
   
   const getFormattedDate = (timestamp) => {
+    if (!timestamp) {
+      return '-';
+    }
     const date = new Date(timestamp);
     return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
   }
